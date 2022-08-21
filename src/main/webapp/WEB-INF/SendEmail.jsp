@@ -1,0 +1,187 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="dd" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Send bulk emails</title>
+
+<!-- CSS
+		================================================== -->
+	<!-- Fontawesome Icon font -->
+	<link rel="stylesheet" href="res/plugins/themefisher-font/style.css">
+	<!-- bootstrap.min css -->
+	<link rel="stylesheet" href="res/plugins/bootstrap/dist/css/bootstrap.min.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="res/plugins/animate-css/animate.css">
+	<!-- Magnific popup css -->
+	<link rel="stylesheet" href="res/plugins/magnific-popup/dist/magnific-popup.css">
+	<!-- Slick Carousel -->
+	<link rel="stylesheet" href="res/plugins/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="res/plugins/slick-carousel/slick/slick-theme.css">
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="res/css/style.css">
+
+</head>
+
+<body>
+
+<section id="contact-us" class="contact-us section-bg">
+	<div class="container">
+		<div class="row">
+			
+			<!-- section title -->
+			<div class="title text-center wow fadeIn" data-wow-duration="500ms">
+				<h2>send  <span class="color">Bulk Emails</span></h2>
+				<div class="border"></div>
+			</div>
+			<!-- /section title -->
+			
+		
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+	
+	<!-- Contact Form -->
+			<div class="contact-form col-md-6 wow fadeInUp col-md-offset-3" data-wow-duration="500ms" data-wow-delay="300ms">
+				
+					<!-- Contact Form -->
+		
+			
+			<s:form action="/sendEmails" method="post" modelAttribute="emails">
+			
+		                <div class="form-group">
+						<!-- <label for="emailId" class="form-label">Mail Id</label> -->
+						<s:input path="emailId" name="email_Id" type="hidden" id="emailId" class="form-control" placeholder="Write Email Id" readonly="true" />
+						<s:errors path="emailId" class="errors"></s:errors>
+						</div>
+			
+						<div class="form-group">
+						<label for="reciever_emails" class="form-label">Write the Email</label>
+						<p class="text-muted" id="email_inst">Use(<span id="comma">,</span>) to seprate mail ids without spaces</p>
+						<s:input path="reciever_emails" type="text" name="email" id="email" class="form-control" placeholder="Enter Email" />
+						<s:errors path="reciever_emails" class="errors"></s:errors>
+						</div>
+						
+						<div class="form-group">
+						<label for="subject" class="form-label">Subject of the Email</label>
+						<s:input path="subject" type="text" name="subject" id="subject" class="form-control" placeholder="Enter Subject" />
+						<s:errors path="subject" class="errors"></s:errors>
+						</div>
+
+
+						<div class="form-group">
+						<label for="content" class="form-label">Write the Content of Mail</label><br>
+						<s:textarea path="content" name="content" id="content" class="form-control" rows="5" placeholder="Enter the content of the mail"></s:textarea>
+						<s:errors path="content" class="errors"></s:errors>
+						</div>
+		  
+						<div class="form-group" id="btn">
+						<input type="submit" value="Send Email" class="btn btn-transparent btn-block" id="btn btn-transparent btn-block" onclick="alert()">
+						  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />    
+						</div>
+			
+			
+			</s:form>
+					
+				
+		
+			</div>
+			<!-- ./End Contact Form -->
+		
+	
+</section> <!-- end section -->
+	
+
+	<footer id="footer" class="bg-one">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-lg-12">
+
+				<!-- Footer Social Links -->
+				<div class="social-icon">
+					<ul class="list-inline">
+						<li><a href="https://facebook.com/themefisher"><i class="tf-ion-social-facebook"></i></a></li>
+						<li><a href="https://twitter.com/themefisher"><i class="tf-ion-social-twitter"></i></a></li>
+						<li><a href="https://www.youtube.com/channel/UCx9qVW8VF0LmTi4OF2F8YdA"><i class="tf-ion-social-youtube"></i></a></li>
+						<li><a href="https://dribbble.com/themefisher"><i class="tf-ion-social-dribbble-outline"></i></a></li>
+						<li><a href="https://pinterest.com/themefisher"><i class="tf-ion-social-pinterest-outline"></i></a></li>
+					</ul>
+				</div>
+				<!--/. End Footer Social Links -->
+
+				<!-- copyright -->
+				<div class="copyright text-center">
+					<a href="/WEB-INF/Home.jsp">
+						<!-- <img src="images/logo-meghna.png" alt="Meghna" />  -->
+						<svg width="40px" height="40px" viewBox="0 0 45 44" version="1.1"
+							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								<g id="Group" transform="translate(2.000000, 2.000000)" stroke="#57CBCC"
+									stroke-width="3">
+									<ellipse id="Oval" cx="20.5" cy="20" rx="20.5" ry="20"></ellipse>
+									<path d="M6,7 L33.5,34.5" id="Line-2" stroke-linecap="square"></path>
+									<path d="M21,20 L34,7" id="Line-3" stroke-linecap="square"></path>
+								</g>
+							</g>
+						</svg>
+					</a>
+					<br />
+
+					<p>Design And Developed by <a href="http://www.themefisher.com">Themefisher.com</a>. Copyright
+						&copy; <script>
+							document.write(new Date().getFullYear())
+						</script>. All Rights Reserved.</p>
+				</div>
+				<!-- /copyright -->
+
+			</div> <!-- end col lg 12 -->
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+</footer> <!-- end footer -->
+	    
+<!-- end Contact Area
+		========================================== -->
+
+
+<!-- 
+		Essential Scripts
+		=====================================-->
+		
+		<!-- Main jQuery -->
+		<script type="text/javascript" src="res/plugins/jquery/dist/jquery.min.js"></script>
+		<!-- Bootstrap 3.1 -->
+		<script type="text/javascript" src="res/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- Slick Carousel -->
+		<script type="text/javascript" src="res/plugins/slick-carousel/slick/slick.min.js"></script>
+		<!-- Portfolio Filtering -->
+		<script type="text/javascript" src="res/plugins/filterzr/jquery.filterizr.min.js"></script>
+		<!-- Smooth Scroll -->
+		<script type="text/javascript" src="res/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+		<!-- Magnific popup -->
+		<script type="text/javascript" src="res/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+		<!-- Google Map API -->
+		<script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+		<!-- Sticky Nav -->
+		<script type="text/javascript" src="res/plugins/Sticky/jquery.sticky.js"></script>
+		<!-- Number Counter Script -->
+		<script type="text/javascript" src="res/plugins/count-to/jquery.countTo.js"></script>
+		<!-- wow.min Script -->
+		<script type="text/javascript" src="res/plugins/wow/dist/wow.min.js"></script>
+		<!-- Custom js -->
+		<script type="text/javascript" src="res/js/script.js"></script>
+		<script>
+			function alert(){
+			alert(Email Sent);
+			alert("Email Sent")
+			}
+
+		</script>
+
+
+	</body>
+	
+</html>
