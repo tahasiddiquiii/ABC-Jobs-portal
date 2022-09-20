@@ -10,7 +10,7 @@ Last but not least learnt the spring MVC pattern to code.
 
  [BDSE03-1121-CPJ-Project_Report_Problem_Management_TahaSiddiqui.docx](https://github.com/tahasiddiquiii/ABC-Jobs-portal/files/9597991/BDSE03-1121-CPJ-Project_Report_Problem_Management_TahaSiddiqui.docx)
 
- ### Working video of ABC Jobs Pte. Ltd.
+ ### Working video of web application ABC Jobs Pte. Ltd.
  https://www.linkedin.com/feed/update/urn:li:activity:6977834063973789696/
 
  ### First look of the web application
